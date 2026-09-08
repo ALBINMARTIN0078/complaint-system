@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Complaint System</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial;
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+.container{
+    text-align:center;
+}
+
+h1{
+    font-size:50px;
+}
+
+button{
+    padding:15px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:5px;
+    background:#ffcc00;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#ffaa00;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Complaint Management System</h1>
+
+<p>Welcome to the complaint portal</p>
+<p>This is a web application that allows users to submit and track complaints efficiently.
+    It helps organizations manage issues by categorizing complaints, assigning them to departments,
+     and updating their status. The system improves communication, ensures quick problem resolution, 
+     and maintains records for better service management and customer satisfaction.</p>
+{% comment %} <a href="/complaints/submit/">
+<button>Submit Complaint</button> {% endcomment %}
+</a>
+
+</div>
+
+</body>
+</html>
+
+{% endblock %}

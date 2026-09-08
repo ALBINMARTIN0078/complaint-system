@@ -1,0 +1,68 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Complaint</title>
+
+    <style>
+        body{
+            background: linear-gradient(135deg,#4facfe,#00f2fe);
+            font-family: Arial, sans-serif;
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .complaint-box{
+            background:white;
+            padding:40px;
+            width:450px;
+            border-radius:10px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.2);
+            text-align:center;
+        }
+
+        h2{
+            margin-bottom:20px;
+        }
+
+        button{
+            background:#007bff;
+            color:white;
+            border:none;
+            padding:10px 20px;
+            border-radius:5px;
+            font-size:16px;
+        }
+
+        button:hover{
+            background:#0056b3;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="complaint-box">
+
+<h2>Submit Complaint</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">Submit</button>
+</form>
+
+</div>
+
+</body>
+</html>
+
+{% endblock %}

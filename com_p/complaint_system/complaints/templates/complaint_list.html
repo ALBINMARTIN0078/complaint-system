@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Complaints</title>
+
+<style>
+
+body{
+    background: linear-gradient(135deg,#43e97b,#38f9d7);
+    font-family: Arial;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.box{
+    background:white;
+    padding:40px;
+    width:500px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+ul{
+    list-style:none;
+    padding:0;
+}
+
+li{
+    padding:10px;
+    border-bottom:1px solid #ddd;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>My Complaints</h2>
+
+<ul>
+{% for complaint in complaints %}
+<li>
+<strong>{{ complaint.title }}</strong> -
+
+{% if complaint.status == "Pending" %}
+<span style="color:red;">Pending</span>
+
+{% elif complaint.status == "In Progress" %}
+<span style="color:orange;">In Progress</span>
+
+{% else %}
+<span style="color:green;">Solved</span>
+{% endif %}
+</li>
+{% empty %}
+<li>No complaints yet</li>
+{% endfor %}
+</ul>
+
+</div>
+
+</body>
+</html>
+
+{% endblock %}
